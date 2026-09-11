@@ -1375,8 +1375,14 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Ubicación</h3>
-                <p>Calle 35 Cartago, Oreamuno<br>Costa Rica<br>Orosi, Cartago, Costa Rica</p>
-                <button class="footer-cta" onclick="openLocationModal()">📍 Ver en Maps o Waze</button>
+                <p>
+                    <a href="#" onclick="openLocationModal('Oreamuno'); return false;">
+                        Cartago, Oreamuno Costa Rica
+                    </a><br>
+                    <a href="#" onclick="openLocationModal('Orosi'); return false;">
+                        Orosi, Cartago, Costa Rica
+                    </a>
+                </p>
             </div>
             <div class="footer-section">
                 <h3>Contacto</h3>
@@ -1420,7 +1426,11 @@
         </div>
         <div class="footer-bottom">
             <p>© 2025 JCCP Especialidades Odontológicas. Todos los derechos reservados.</p>
-            <p>Creado por <a href="#">IAM Tech Solutions</a>.</p>
+            <p>Creado por 
+                <a href="https://wa.me/50686645351" target="_blank">
+                    IAM Tech Solutions
+                </a>.
+            </p>
         </div>
     </footer>
 
@@ -1473,22 +1483,59 @@
     }
 
     /* ── MODAL ── */
-    function openLocationModal()  { document.getElementById('locationModal').style.display = 'block'; }
-    function closeLocationModal() { document.getElementById('locationModal').style.display = 'none'; }
+    let selectedLocation = 'Oreamuno';
+
+    function openLocationModal(location) {
+        selectedLocation = location;
+        document.getElementById('locationModal').style.display = 'block';
+    }
+
+    function closeLocationModal() {
+        document.getElementById('locationModal').style.display = 'none';
+    }
 
     function openGoogleMaps() {
-        window.open('https://www.google.com/maps/place/C.+35,+Provincia+de+Cartago,+Cartago,+Costa+Rica/@9.8597812,-83.9048275,17z', '_blank');
+
+        if (selectedLocation === 'Oreamuno') {
+            window.open(
+                'https://www.google.com/maps/search/?api=1&query=JJC+Especialidades+Odontologicas,+Cartago,+Costa+Rica&query_place_id=ChIJdbJBcHLfoI8Rd3VGglFYlSg',
+                '_blank'
+            );
+        }
+
+        if (selectedLocation === 'Orosi') {
+            window.open(
+                'https://www.google.com/maps/search/?api=1&query=Especialidades+Odontologicas+Dr+Juan+Carlos+Coto+Picado,+Orosi,+Costa+Rica&query_place_id=ChIJz1k3EikhoY8RwSdEuX_0v18',
+                '_blank'
+            );
+        }
+
         closeLocationModal();
     }
 
     function openWaze() {
-        window.open('https://waze.com/ul?ll=9.8597812,-83.9048275&navigate=yes', '_blank');
+
+        if (selectedLocation === 'Oreamuno') {
+            window.open(
+                'https://www.waze.com/es/live-map/directions/cr/provincia-de-cartago/cartago/jjc-especialidades-odontologicas?to=place.ChIJdbJBcHLfoI8Rd3VGglFYlSg',
+                '_blank'
+            );
+        }
+
+        if (selectedLocation === 'Orosi') {
+            window.open(
+                'https://www.waze.com/es/live-map/directions/cr/provincia-de-cartago/orosi/especialidades-odontologicas-dr.-juan-carlos-coto-picado?to=place.ChIJz1k3EikhoY8RwSdEuX_0v18',
+                '_blank'
+            );
+        }
+
         closeLocationModal();
     }
 
-    window.onclick = function(e) {
-        const modal = document.getElementById('locationModal');
-        if (e.target === modal) modal.style.display = 'none';
+    window.onclick = e => {
+        if (e.target === document.getElementById('locationModal')) {
+            closeLocationModal();
+        }
     };
 
     /* ── LANGUAGE TOGGLE ── */

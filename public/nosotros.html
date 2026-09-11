@@ -1074,7 +1074,7 @@
                         <div class="member-accent" style="margin-left:0;"></div>
                         <p>Miembro activo de la Academia Costarricense de Ortodoncia (ACO) y de la Asociación Latinoamericana de Ortodoncia (ALADO), organizaciones que promueven el desarrollo y la actualización de la ortodoncia a nivel nacional y latinoamericano.</p>
                         <div class="member-accent" style="margin-left:0;"></div>
-                        <p>Bajo su dirección, y con el apoyo de un equipo multidisciplinario de especialistas, JCCP Especialidades Odontológicas ha atendido a más de 2,000 pacientes, con clínicas en San Rafael de Oreamuno, Orosí y Santa María de Dota, en la provincia de Cartago.</p>
+                        <p>Bajo su dirección, y con el apoyo de un equipo multidisciplinario de especialistas, JJC Especialidades Odontológicas ha atendido a más de 2,000 pacientes, con clínicas en San Rafael de Oreamuno, Orosí y Santa María de Dota, en la provincia de Cartago.</p>
                     </div>
                 </div>
                 </div>
@@ -1231,7 +1231,7 @@
                 <div class="profile-entry">
                     <div class="profile-layout reverse">
                         <div class="profile-photo">
-                            <img src="img/" alt="Dra. María Fernanda Rodríguez Callaci">
+                            <img src="img/Fernanda Rodriguez.jpeg" alt="Dra. María Fernanda Rodríguez Callaci">
                         </div>
                         <div class="profile-content">
                             <h3 class="profile-name">Dra. María Fernanda Rodríguez Callaci</h3>
@@ -1248,7 +1248,7 @@
                 <div class="profile-entry">
                     <div class="profile-layout">
                         <div class="profile-photo">
-                            <img src="img/" alt="Dra. Gabriela Brenes Chacón">
+                            <img src="img/Gabriela Brenes.jpeg" alt="Dra. Gabriela Brenes Chacón">
                         </div>
                         <div class="profile-content">
                             <h3 class="profile-name">Dra. Gabriela Brenes Chacón</h3>
@@ -1276,7 +1276,7 @@
                 <div class="profile-entry">
                     <div class="profile-layout">
                         <div class="profile-photo">
-                            <img src="img/Eduardo Navas.jpg" alt="Dr. Eduardo Navas Barrantes">
+                            <img src="img/Eduardo Navas.jpeg" alt="Dr. Eduardo Navas Barrantes">
                         </div>
                         <div class="profile-content">
                             <h3 class="profile-name">Dr. Eduardo Navas Barrantes</h3>
@@ -1418,7 +1418,7 @@
                 <div class="profile-entry">
                     <div class="profile-layout">
                         <div class="profile-photo">
-                            <img src="img/" alt="Dra. Paula Prendas Navarro">
+                            <img src="img/Paula Prendas.jpeg" alt="Dra. Paula Prendas Navarro">
                         </div>
                         <div class="profile-content">
                             <h3 class="profile-name">Dra. Paula Prendas Navarro</h3>
@@ -1469,7 +1469,6 @@
                             <div class="member-accent" style="margin-left:0;"></div>
                             <p class="profile-credentials"><strong>Universidad Autónoma de México (UNAM) (2018)</strong> — Cirujano Maxilofacial.</p>
                             <div class="member-accent" style="margin-left:0;"></div>
-                            <p class="profile-tagline">Me gusta hacer mucho hacer.</p>
                         </div>
                     </div>
                 </div>
@@ -1557,8 +1556,14 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Ubicación</h3>
-                <p>Calle 35 Cartago, Oreamuno<br>Costa Rica<br>Orosi, Cartago, Costa Rica</p>
-                <button class="footer-cta" onclick="openLocationModal()">📍 Ver en Maps o Waze</button>
+                <p>
+                    <a href="#" onclick="openLocationModal('Oreamuno'); return false;">
+                        Cartago, Oreamuno Costa Rica
+                    </a><br>
+                    <a href="#" onclick="openLocationModal('Orosi'); return false;">
+                        Orosi, Cartago, Costa Rica
+                    </a>
+                </p>
             </div>
             <div class="footer-section">
                 <h3>Contacto</h3>
@@ -1602,7 +1607,11 @@
         </div>
         <div class="footer-bottom">
             <p>© 2025 JCCP Especialidades Odontológicas. Todos los derechos reservados.</p>
-            <p>Creado por <a href="#">IAM Tech Solutions</a>.</p>
+            <p>Creado por 
+                <a href="https://wa.me/50686645351" target="_blank">
+                    IAM Tech Solutions
+                </a>.
+            </p>
         </div>
     </footer>
 
@@ -1723,22 +1732,60 @@
         document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // ── MODAL ──────────────────────────────────────────────────────────────
-    function openLocationModal()  { document.getElementById('locationModal').style.display = 'block'; }
-    function closeLocationModal() { document.getElementById('locationModal').style.display = 'none'; }
+    /* ── MODAL ── */
+    let selectedLocation = 'Oreamuno';
+
+    function openLocationModal(location) {
+        selectedLocation = location;
+        document.getElementById('locationModal').style.display = 'block';
+    }
+
+    function closeLocationModal() {
+        document.getElementById('locationModal').style.display = 'none';
+    }
 
     function openGoogleMaps() {
-        window.open('https://www.google.com/maps/place/C.+35,+Provincia+de+Cartago,+Cartago,+Costa+Rica/@9.8597812,-83.9048275,17z', '_blank');
+
+        if (selectedLocation === 'Oreamuno') {
+            window.open(
+                'https://www.google.com/maps/search/?api=1&query=JJC+Especialidades+Odontologicas,+Cartago,+Costa+Rica&query_place_id=ChIJdbJBcHLfoI8Rd3VGglFYlSg',
+                '_blank'
+            );
+        }
+
+        if (selectedLocation === 'Orosi') {
+            window.open(
+                'https://www.google.com/maps/search/?api=1&query=Especialidades+Odontologicas+Dr+Juan+Carlos+Coto+Picado,+Orosi,+Costa+Rica&query_place_id=ChIJz1k3EikhoY8RwSdEuX_0v18',
+                '_blank'
+            );
+        }
+
         closeLocationModal();
     }
 
     function openWaze() {
-        window.open('https://waze.com/ul?ll=9.8597812,-83.9048275&navigate=yes', '_blank');
+
+        if (selectedLocation === 'Oreamuno') {
+            window.open(
+                'https://www.waze.com/es/live-map/directions/cr/provincia-de-cartago/cartago/jjc-especialidades-odontologicas?to=place.ChIJdbJBcHLfoI8Rd3VGglFYlSg',
+                '_blank'
+            );
+        }
+
+        if (selectedLocation === 'Orosi') {
+            window.open(
+                'https://www.waze.com/es/live-map/directions/cr/provincia-de-cartago/orosi/especialidades-odontologicas-dr.-juan-carlos-coto-picado?to=place.ChIJz1k3EikhoY8RwSdEuX_0v18',
+                '_blank'
+            );
+        }
+
         closeLocationModal();
     }
 
     window.onclick = e => {
-        if (e.target === document.getElementById('locationModal')) closeLocationModal();
+        if (e.target === document.getElementById('locationModal')) {
+            closeLocationModal();
+        }
     };
 
     // ── INIT ───────────────────────────────────────────────────────────────

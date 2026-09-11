@@ -488,7 +488,33 @@
         line-height: 1.7;
         display: -webkit-box;
         -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
         overflow: hidden;
+    }
+
+    .card-desc.expanded {
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+    }
+
+    .read-more {
+        display: none;
+        align-self: flex-start;
+        background: none;
+        border: none;
+        padding: 0;
+        color: var(--violet);
+        cursor: pointer;
+        font-size: 0.82rem;
+        font-weight: 600;
+        font-family: 'DM Sans', sans-serif;
+        transition: color 0.25s ease;
+    }
+
+    .read-more:hover {
+        color: var(--blue-deep);
+        text-decoration: underline;
     }
 
     .card-footer {
@@ -995,7 +1021,8 @@
                     <div class="card-body">
                         <div class="card-title">Odontología General</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Cuidamos la salud de tu sonrisa con revisiones, limpiezas y tratamientos dentales para toda la familia.</p>
+                        <p class="card-desc">Tu primera línea para el bienestar de tu boca. Incluye revisiones diagnósticas, limpiezas profesionales, restauraciones preventivas, detección de caries a tiempo, además de realizar controles y distintos tratamientos dentales para mantener tu boca sana.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Odontología General." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#odontologia-general" class="btn-more">Conocer Más</a>
@@ -1012,7 +1039,8 @@
                     <div class="card-body">
                         <div class="card-title">Ortodoncia</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Alinea tus dientes y mejora tu sonrisa con brackets o alineadores transparentes.</p>
+                        <p class="card-desc">Especialidad enfocada en lograr una alineación de tus dientes y la armonía de tu rostro. Utilizamos diferentes alternativas de ortodoncia desde brackets convencionales hasta ortodoncia invisible con alineadores.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Ortodoncia." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#ortodoncia" class="btn-more">Conocer Más</a>
@@ -1029,7 +1057,8 @@
                     <div class="card-body">
                         <div class="card-title">Odontología Infantil</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Atención especializada para niños, enfocada en la prevención y el cuidado dental desde temprana edad.</p>
+                        <p class="card-desc">Es la especialidad de la odontología que se encarga de cuidar, diagnosticar y tratar la salud bucodental de los bebés, niños y adolescentes. Su objetivo principal es mantener sanos los dientes temporales y guiar el crecimiento correcto de su boca, asegurando que la visita al dentista sea una experiencia divertida, segura y libre de miedos.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Odontología Infantil." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#odontopediatria" class="btn-more">Conocer Más</a>
@@ -1046,7 +1075,8 @@
                     <div class="card-body">
                         <div class="card-title">Endodoncia</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Salvamos dientes afectados por caries profundas o infecciones, aliviando el dolor y restaurando su función.</p>
+                        <p class="card-desc">Especialidad que se encarga de salvar piezas dentales dañadas por caries profundas, golpes, infecciones y otras molestias, logrando con el tratamiento alargar la vida útil de las piezas dentales y evitar su pérdida.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Endodoncia." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#endodoncia" class="btn-more">Conocer Más</a>
@@ -1063,7 +1093,8 @@
                     <div class="card-body">
                         <div class="card-title">Periodoncia</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Protegemos la salud de tus encías para mantener una sonrisa fuerte y saludable.</p>
+                        <p class="card-desc">Especialidad de la odontología que se encarga de cuidar, diagnosticar y tratar las enfermedades que afectan a los tejidos que sostienen y sujetan tus dientes: principalmente las encías y el hueso que los rodea. Su objetivo principal es evitar la pérdida de los dientes manteniendo sus bases firmes y sanas.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Periodoncia." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#periodoncia" class="btn-more">Conocer Más</a>
@@ -1080,7 +1111,8 @@
                     <div class="card-body">
                         <div class="card-title">Cirugía Oral y Maxilofacial</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Realizamos procedimientos quirúrgicos con seguridad y tecnología para mejorar tu salud bucal.</p>
+                        <p class="card-desc">Especialidad dedicada al estudio, diagnóstico, prevención y tratamiento quirúrgico de las enfermedades, lesiones y defectos de la cara, la boca, los dientes, los maxilares y el cuello.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Cirugía Oral y Maxilofacial." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#maxilofacial" class="btn-more">Conocer Más</a>
@@ -1097,7 +1129,8 @@
                     <div class="card-body">
                         <div class="card-title">Implantología</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Recupera los dientes perdidos con soluciones duraderas, funcionales y de apariencia natural.</p>
+                        <p class="card-desc">Es la especialidad que se encarga de reponer los dientes perdidos mediante la colocación de implantes dentales. Su objetivo principal es devolverte la total seguridad al sonreír, permitiéndote masticar, hablar y lucir una dentadura completa de la forma más natural y cómoda posible.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Implantología." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#periodoncia" class="btn-more">Conocer Más</a>
@@ -1114,7 +1147,8 @@
                     <div class="card-body">
                         <div class="card-title">Prostodoncia (Rehabilitación Oral)</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Devolvemos la función y estética de tu sonrisa mediante tratamientos personalizados.</p>
+                        <p class="card-desc">Especialidad enfocada en devolver la función, anatomía y estética de la mordida mediante prótesis personalizadas fijas o removibles.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Prostodoncia (Rehabilitación Oral)." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#prostodoncia" class="btn-more">Conocer Más</a>
@@ -1131,7 +1165,8 @@
                     <div class="card-body">
                         <div class="card-title">Dolor Orofacial</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Diagnóstico y tratamiento para molestias en la mandíbula, rostro y articulaciones.</p>
+                        <p class="card-desc">Especialidad dedicada al diagnóstico y tratamiento especializado para aliviar dolores, disfunciones y molestias crónicas localizadas en la mandíbula, el rostro y las articulaciones.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Dolor Orofacial." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#dolor-orofacial" class="btn-more">Conocer Más</a>
@@ -1148,7 +1183,8 @@
                     <div class="card-body">
                         <div class="card-title">Patología Oral</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Evaluamos y detectamos alteraciones en la cavidad oral para brindar un tratamiento oportuno.</p>
+                        <p class="card-desc">Especialidad dedicada a la evaluación, diagnóstico y detección oportuna de alteraciones, lesiones o enfermedades que afectan los tejidos blandos y duros del interior de la boca.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Patología Oral." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html" class="btn-more">Conocer Más</a>
@@ -1165,7 +1201,8 @@
                     <div class="card-body">
                         <div class="card-title">Centro de Radiología y Tomografía</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Imágenes de alta precisión para un diagnóstico más seguro y confiable.</p>
+                        <p class="card-desc">Nuestra Clínica cuenta con un centro de radiología que nos ayuda con los estudios e imágenes tridimensionales de alta resolución esenciales para un diagnóstico clínico certero y una planificación según la necesidad de cada paciente.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Centro de Radiología y Tomografía." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html" class="btn-more">Conocer Más</a>
@@ -1182,7 +1219,8 @@
                     <div class="card-body">
                         <div class="card-title">Escáner Intraoral</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Tecnología digital que permite obtener impresiones cómodas y precisas sin moldes tradicionales.</p>
+                        <p class="card-desc">Tecnología digital avanzada que registra la forma exacta de tu boca en 3D para análisis y planificación de cada caso, eliminando por completo las molestas pastas y moldes tradicionales.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Escáner Intraoral." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html" class="btn-more">Conocer Más</a>
@@ -1199,7 +1237,8 @@
                     <div class="card-body">
                         <div class="card-title">Laboratorio Digital</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Diseño y fabricación de restauraciones dentales con tecnología de última generación.</p>
+                        <p class="card-desc">Contamos con instalaciones preparadas para confeccionar trabajos inmediatos y de urgencia. Además, realizamos la gran mayoría de nuestros tratamientos directamente en la clínica, incluyendo prótesis dentales, coronas de resina y provisionales. Esto nos permite garantizar un control de calidad estricto y reducir drásticamente los tiempos de espera para nuestros pacientes.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Laboratorio Digital." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html" class="btn-more">Conocer Más</a>
@@ -1216,7 +1255,8 @@
                     <div class="card-body">
                         <div class="card-title">Centro de Blanqueamiento</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Mejora el brillo de tu sonrisa con tratamientos seguros y efectivos.</p>
+                        <p class="card-desc">Utilizamos tecnología de vanguardia y geles blanqueadores de alta calidad que eliminan las manchas causadas por el café, el tabaco o el paso del tiempo. Todo el proceso es supervisado por nuestros odontólogos para proteger tu esmalte y garantizar un resultado armónico, brillante y duradero.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Centro de Blanqueamiento." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html" class="btn-more">Conocer Más</a>
@@ -1233,7 +1273,8 @@
                     <div class="card-body">
                         <div class="card-title">Odontología Anti Edad</div>
                         <div class="card-rule"></div>
-                        <p class="card-desc">Tratamientos enfocados en conservar una sonrisa saludable, armónica y rejuvenecida.</p>
+                        <p class="card-desc">Tratamientos odontológicos integrales enfocados en conservar, rejuvenecer y mantener una sonrisa saludable y armónica durante la etapa adulta.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Odontología Anti Edad." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html#odontologia-general" class="btn-more">Conocer Más</a>
@@ -1251,6 +1292,7 @@
                         <div class="card-title">Diseño de Sonrisa</div>
                         <div class="card-rule"></div>
                         <p class="card-desc">Transformamos tu sonrisa mediante un plan personalizado que combina salud y estética.</p>
+                        <button class="read-more" type="button" onclick="toggleDetails(this)">Ver Más</button>
                         <div class="card-footer">
                             <a href="https://wa.me/50689506725?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20Diseño de Sonrisa." target="_blank" class="btn-wa">📅 Agendar Cita</a>
                             <a href="nosotros.html" class="btn-more">Conocer Más</a>
@@ -1273,8 +1315,14 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Ubicación</h3>
-                <p>Calle 35 Cartago, Oreamuno<br>Costa Rica<br>Orosi, Cartago, Costa Rica</p>
-                <button class="footer-cta" onclick="openLocationModal()">📍 Ver en Maps o Waze</button>
+                <p>
+                    <a href="#" onclick="openLocationModal('Oreamuno'); return false;">
+                        Cartago, Oreamuno Costa Rica
+                    </a><br>
+                    <a href="#" onclick="openLocationModal('Orosi'); return false;">
+                        Orosi, Cartago, Costa Rica
+                    </a>
+                </p>
             </div>
             <div class="footer-section">
                 <h3>Contacto</h3>
@@ -1318,7 +1366,11 @@
         </div>
         <div class="footer-bottom">
             <p>© 2025 JCCP Especialidades Odontológicas. Todos los derechos reservados.</p>
-            <p>Creado por <a href="#">IAM Tech Solutions</a>.</p>
+            <p>Creado por 
+                <a href="https://wa.me/50686645351" target="_blank">
+                    IAM Tech Solutions
+                </a>.
+            </p>
         </div>
     </footer>
 
@@ -1352,26 +1404,85 @@
         });
     });
 
-    /* ── TOGGLE DETAILS ── */
-    function toggleDetails(btn) {
-        const details = btn.closest('.service-card').querySelector('.card-details');
-        details.classList.toggle('open');
-        btn.textContent = details.classList.contains('open') ? 'Ver Menos' : 'Ver Más';
+    /* ── VER MÁS / VER MENOS ── */
+    function setupReadMore() {
+        document.querySelectorAll('.service-card').forEach(card => {
+            const desc = card.querySelector('.card-desc');
+            const btn = card.querySelector('.read-more');
+
+            if (!desc || !btn) return;
+
+            desc.classList.remove('expanded');
+            btn.textContent = 'Ver Más';
+
+            // Solo mostrar el botón si el texto supera 3 líneas.
+            btn.style.display = desc.scrollHeight > desc.clientHeight + 1 ? 'inline-block' : 'none';
+        });
     }
 
+    function toggleDetails(btn) {
+        const desc = btn.closest('.service-card').querySelector('.card-desc');
+        const isExpanded = desc.classList.toggle('expanded');
+        btn.textContent = isExpanded ? 'Ver Menos' : 'Ver Más';
+    }
+
+    setupReadMore();
+    window.addEventListener('resize', setupReadMore);
+
     /* ── MODAL ── */
-    function openLocationModal()  { document.getElementById('locationModal').style.display = 'block'; }
-    function closeLocationModal() { document.getElementById('locationModal').style.display = 'none'; }
+    let selectedLocation = 'Oreamuno';
+
+    function openLocationModal(location) {
+        selectedLocation = location;
+        document.getElementById('locationModal').style.display = 'block';
+    }
+
+    function closeLocationModal() {
+        document.getElementById('locationModal').style.display = 'none';
+    }
+
     function openGoogleMaps() {
-        window.open('https://www.google.com/maps/place/C.+35,+Provincia+de+Cartago,+Cartago,+Costa+Rica/@9.8597812,-83.9048275,17z', '_blank');
+
+        if (selectedLocation === 'Oreamuno') {
+            window.open(
+                'https://www.google.com/maps/search/?api=1&query=JJC+Especialidades+Odontologicas,+Cartago,+Costa+Rica&query_place_id=ChIJdbJBcHLfoI8Rd3VGglFYlSg',
+                '_blank'
+            );
+        }
+
+        if (selectedLocation === 'Orosi') {
+            window.open(
+                'https://www.google.com/maps/search/?api=1&query=Especialidades+Odontologicas+Dr+Juan+Carlos+Coto+Picado,+Orosi,+Costa+Rica&query_place_id=ChIJz1k3EikhoY8RwSdEuX_0v18',
+                '_blank'
+            );
+        }
+
         closeLocationModal();
     }
+
     function openWaze() {
-        window.open('https://waze.com/ul?ll=9.8597812,-83.9048275&navigate=yes', '_blank');
+
+        if (selectedLocation === 'Oreamuno') {
+            window.open(
+                'https://www.waze.com/es/live-map/directions/cr/provincia-de-cartago/cartago/jjc-especialidades-odontologicas?to=place.ChIJdbJBcHLfoI8Rd3VGglFYlSg',
+                '_blank'
+            );
+        }
+
+        if (selectedLocation === 'Orosi') {
+            window.open(
+                'https://www.waze.com/es/live-map/directions/cr/provincia-de-cartago/orosi/especialidades-odontologicas-dr.-juan-carlos-coto-picado?to=place.ChIJz1k3EikhoY8RwSdEuX_0v18',
+                '_blank'
+            );
+        }
+
         closeLocationModal();
     }
+
     window.onclick = e => {
-        if (e.target === document.getElementById('locationModal')) closeLocationModal();
+        if (e.target === document.getElementById('locationModal')) {
+            closeLocationModal();
+        }
     };
 
     /* ── LANGUAGE TOGGLE ── */
